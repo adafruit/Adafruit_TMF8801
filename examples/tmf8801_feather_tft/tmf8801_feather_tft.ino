@@ -18,6 +18,7 @@
 #include <Fonts/FreeSansBold12pt7b.h>
 #include <Fonts/FreeSansBold18pt7b.h>
 #include <Fonts/FreeSansBold24pt7b.h>
+#include <Fonts/FreeSansBold9pt7b.h>
 #include <SPI.h>
 
 const uint16_t DISPLAY_WIDTH = 240;
@@ -102,13 +103,10 @@ void drawMeasurementFrame() {
   framebuffer.fillScreen(ST77XX_BLACK);
   framebuffer.fillRect(0, 0, framebuffer.width(), 28, ST77XX_BLUE);
   framebuffer.setTextColor(ST77XX_WHITE);
-  framebuffer.setFont(&FreeSansBold12pt7b);
+  framebuffer.setFont(&FreeSansBold9pt7b);
   framebuffer.setTextSize(1);
-  framebuffer.setCursor(7, 21);
-  framebuffer.print(F("TMF8801"));
-  framebuffer.setFont(&FreeSans9pt7b);
-  framebuffer.setCursor(172, 20);
-  framebuffer.print(F("RANGE"));
+  framebuffer.setCursor(7, 20);
+  framebuffer.print(F("Adafruit TMF8801 Demo"));
 
   framebuffer.setFont();
   framebuffer.setTextColor(ST77XX_WHITE);
